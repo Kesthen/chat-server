@@ -1,10 +1,10 @@
-# 🚀 Chat Server - Estación Espacial Orbital (DOSW Semana 15)
+#  Chat Server - Estación Espacial Orbital (DOSW Semana 15)
 
 Servidor en tiempo real construido con **Spring Boot 3.4.x**, **WebSockets**, protocolo **STOMP** y observabilidad integrada de nivel empresarial (**Prometheus**, **Loki**, **Zipkin** y **Grafana**).
 
 ---
 
-## 🛰️ 1. Descripción y Arquitectura
+##  1. Descripción y Arquitectura
 
 El servidor actúa como broker de mensajería y punto de enlace para múltiples tripulantes espaciales:
 - **Protocolo de transporte:** WebSocket nativo (RFC 6455) con handshake HTTP `101 Switching Protocols` en el endpoint `/ws`.
@@ -26,7 +26,7 @@ El servidor actúa como broker de mensajería y punto de enlace para múltiples 
 
 ---
 
-## 📡 2. Destinos STOMP y Endpoints
+##  2. Destinos STOMP y Endpoints
 
 ### Destinos STOMP
 | Dirección / Canal | Tipo | Propósito | Formato / Contenido |
@@ -47,7 +47,7 @@ El servidor actúa como broker de mensajería y punto de enlace para múltiples 
 
 ---
 
-## 🛠️ 3. Ejecución en Local (Paso a Paso)
+##  3. Ejecución en Local (Paso a Paso)
 
 ### Prerrequisitos
 - **Java 21** LTS instalado (`java -version`).
@@ -70,7 +70,7 @@ El servidor estará escuchando en `http://localhost:8080`.
 
 ---
 
-## 🔭 4. Observabilidad y Monitoreo
+##  4. Observabilidad y Monitoreo
 
 ### Levantar el Stack con Docker
 En la carpeta `observabilidad/`:
@@ -99,7 +99,7 @@ Importa el tablero preconfigurado ubicado en:
 
 ---
 
-## 🧠 5. Preguntas de Análisis y Reflexión
+##  5. Preguntas de Análisis y Reflexión
 
 1. **¿Por qué un chat con HTTP normal tendría que estar preguntándole al servidor cada segundo, y qué cambia con WebSocket?**
    - *Respuesta:* HTTP es un protocolo "request-response" unidireccional y sin estado donde la conexión TCP se cierra al finalizar cada respuesta. Para emular tiempo real con HTTP se requiere *polling*, provocando un consumo masivo de ancho de banda y latencia innecesaria. Con **WebSocket**, tras un único handshake HTTP (101 Switching Protocols), la conexión TCP se mantiene abierta de forma bidireccional y persistente (*full-duplex*), permitiendo al servidor empujar datos (*server push*) sin costo de reconexión.
