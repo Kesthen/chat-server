@@ -1,4 +1,4 @@
-# 🛰️ BITÁCORA TÉCNICA - TALLER SEMANA 15 (DOSW)
+#  BITÁCORA TÉCNICA - TALLER SEMANA 15 (DOSW)
 ## WebSockets en Tiempo Real con Spring Boot & React + Observabilidad Integral
 
 - **Estudiante:** Kevin
@@ -8,7 +8,7 @@
 
 ---
 
-## 📌 Resumen Ejecutivo de la Solución
+##  Resumen Ejecutivo de la Solución
 
 El presente proyecto implementa un ecosistema de comunicación bidireccional y reactivo de alta fidelidad:
 1. **Backend (`chat-server`):** Arquitectura sobre Spring Boot 3.4.x, configuración de endpoints STOMP en `/ws`, interceptor de presencia para desconexiones (`SessionDisconnectEvent`), API REST para subida y persistencia de archivos (`/api/archivos`) y exportación de métricas de negocio con Micrometer.
@@ -17,7 +17,7 @@ El presente proyecto implementa un ecosistema de comunicación bidireccional y r
 
 ---
 
-## 🚀 Registro Detallado de Pasos (1 a 16)
+##  Registro Detallado de Pasos (1 a 16)
 
 ### PARTE 1: El Chat (WebSockets & STOMP)
 
@@ -60,7 +60,7 @@ El presente proyecto implementa un ecosistema de comunicación bidireccional y r
 
 #### Paso 8: Tema "Estación Espacial Orbital"
 - Se rediseñó la experiencia con una paleta cyberpunk/sci-fi: fondo estelar `#070913`, acentos cian eléctrico `#06b6d4`, violeta `#8b5cf6`, tipografías *Orbitron* y *Poppins*.
-- Tarjeta de ingreso estilizada con selector de insignias de tripulante (🚀, 👨‍🚀, 🛸, 👾, etc.).
+- Tarjeta de ingreso estilizada con selector de insignias de tripulante 
 - Burbujas de chat diferenciadas con efectos de gradiente, avatar del autor y marcas de tiempo de misión.
 
 #### Paso 9: Funcionalidades Dinámicas Implementadas
@@ -123,7 +123,7 @@ Para la sustentación ante el docente, incluye las siguientes capturas en la car
 | **02** | `02_frames_stomp.png` | Subpestaña **Messages** del WebSocket en DevTools mostrando las tramas STOMP (`CONNECT`, `SUBSCRIBE /topic/sala`, `SEND`, `MESSAGE`). |
 | **03** | `03_chat_multiusuario_3pestanas.png` | Tres navegadores/pestañas en paralelo con diferentes avatares y usuarios chateando en tiempo real. |
 | **04** | `04_selector_emojis_y_multimedia.png` | Interfaz mostrando el selector de emojis abierto y mensajes con imágenes y notas de voz transmitidas. |
-| **05** | `05_aviso_desconexion.png` | Mensaje del sistema con insignia de desconexión (`🚪 Usuario salió del chat`) al cerrar una pestaña. |
+| **05** | `05_aviso_desconexion.png` | Mensaje del sistema con insignia de desconexión (` Usuario salió del chat`) al cerrar una pestaña. |
 | **06** | `06_actuator_prometheus.png` | Navegador en `http://localhost:8080/actuator/prometheus` mostrando las métricas `chat_mensajes_total` y `chat_usuarios_conectados`. |
 | **07** | `07_docker_containers.png` | Terminal con `docker compose ps` o Docker Desktop mostrando Prometheus, Loki, Zipkin y Grafana activos. |
 | **08** | `08_tablero_grafana.png` | Tablero de Grafana (`http://localhost:3000`) con los 6 paneles en verde y graficando tráfico real. |
